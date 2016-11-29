@@ -16,6 +16,24 @@
     %link{:href => "/resources/demos/style.css", :rel => "stylesheet"}/
     %script{:src => "https://code.jquery.com/jquery-1.12.4.js"}
     %script{:src => "https://code.jquery.com/ui/1.12.1/jquery-ui.js"}
+    :css
+      .mySlides {
+          display: none;
+          border-left: 6px solid red;
+          background-color: lightgrey;
+          text-indent: 50px;
+      }
+      #footer {
+          clear: both;
+          position: fixed;
+          background: black;
+          color: white;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: auto; /* Height of the footer */
+          text-align: center;
+      }
   %body
   .nav.navbar-default
   
@@ -38,6 +56,11 @@
       - else
         %li= link_to "Sign Up", new_user_registration_path
         %li= link_to "Log In", new_user_session_path
+    %footer
+    #footer
+      %p
+        Copyright  ©
+        %b KNNB Inc. 2016 (Ride Me!) :)
   #main
     %p.notice= notice
     %p.alert= alert

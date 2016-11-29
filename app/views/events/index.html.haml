@@ -9,151 +9,141 @@
     //%script{:src => "http://cdn.syncfusion.com/js/assets/external/jquery.globalize.min.js"}
     //%script{:src => "http://cdn.syncfusion.com/js/assets/external/jsrender.min.js"}
     //%script{:src => "http://cdn.syncfusion.com/13.2.0.29/js/web/ej.web.all.min.js"} 
-    //%link{:href => "http://www.w3schools.com/lib/w3.css", :rel => "stylesheet"}/
+    %link{:href => "http://www.w3schools.com/lib/w3.css", :rel => "stylesheet"}/
     //%link{:href => "app/assets/stylesheets/mycss.css", :rel => "stylesheet"}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     = javascript_include_tag 'rails'
+    :css
+      .mySlides {
+          display: none;
+          border-left: 6px solid red;
+          background-color: lightgrey;
+          text-indent: 50px;
+      }
+      #footer {
+          clear: both;
+          position: fixed;
+          background: black;
+          color: white;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: auto; /* Height of the footer */
+          text-align: center;
+      }
   %body
   %br/
   %br/
-  .MyIndexBasicsA{ :style => "width: 50%;" } 
-  .divTable
-  .divTableBody
-    %br/
-    %div
-    .login_create_new
-      %div{ :color => "black"}
-      %br/
-      %br/
-      %img{:src =>  asset_path("car2.jpg"), :width => "15%",:height => "5%", :float => "right"}/
-      %left
-        %h1 Sign In
-        %div
-          %label Full Name:
-          %input{:type => "text",:size => "40"}/
-          %input{:maxlength => "2", :size => "2", :type => "text"}/
-          %input{:type => "text"}/
-        %br/
-        %div
-          %label Email    :
-          %input{:size => "77", :type => "email"}/
-        %br/
-        %div
-          %label Phone     :
-          %input{:type => "text",:size =>"10"}/
-          %label Address   :
-          %input{:size => "25", :type => "text"}/
-          %label City/State/Zip
-          %input{:size => "10", :type => "text"}/
-          %input{:maxlength => "2", :size => "2", :type => "text"}/
-          %label -
-          %input{:size => "5", :type => "text"}/
-        %br/
-        %div
-        %br/
-        %div
-          %label Create Password
-          %input{:size => "22", :type => "password"}/
-          %label Retype Password
-          %input{:size => "22", :type => "password"}/
-        %br/
-        %div
-          %label Date of Birth
-          = date_field :event, :EventDate
-          %label Car Owner ?
-          %select#carOwnerSelect{:onchange => "carOwner()"}
-            %option{:value => "Y"} Yes
-            %option{:selected => "selected", :value => "N"} No
-        %br/
-        #not_A_car_owner
-          %button{:onclick  => "carOwner()",:style => "width : 25% ; background-color : lawngreen;"} Submit
-          %button{:style => "width : 25% ; background-color : orange;"} Cancel
-        %br/
-        #Car_owner
-          %div
-            %label Make?
-            %select
-              %option Acura
-              %option Alfa Romeo
-              %option Aston Martin
-              %option Audi
-              %option Bentley Motors
-              %option BMW
-              %option Buick
-              %option Cadillac
-              %option Chevrolet
-              %option Chrysler
-              %option Dodge
-              %option Ferrari
-              %option Fiat
-              %option Ford
-            %label Model?
-            %select
-              %option Camry
-              %option Edge
-              %option Corvette
-            %label Carries?
-            %select
-              %option 1
-              %option 2
-              %option 3
-              %option 4
-              %option 5
-              %option 5+
-            %label Year
-            %input{:maxlength => "4", :size => "4", :type => "text"}/
-          %br/
-          %div
-            %label VIN
-            %input{:type => "text", :size=>"20"}/
-            %label Plates
-            %input{:type => "text",:size =>"5"}/
-            %label State
-            %input{:maxlength => "2", :size => "2", :type => "text"}/
-          %br/
-          %div
-            %label Driver Licence Number
-            %input{:size => "35", :type => "text"}/
-          %br/
-          %div
-            %button{:style => "width : 25% ; background-color : lawngreen;"} Submit
-            %button{:style => "width : 25% ; background-color : orange;"} Cancel
-    :javascript
-      $('#Car_owner').hide();
-      $("#datePicker").datepicker();
-      $(document).ready(function() {
-      $('#Car_owner').hide();
-      $( "#datepicker" ).datepicker();
-      });
-      function login(){
-        var credentials = $('#password').val();
-        alert(credentials);
-        //+ " and the password is : "$('#password').val());
+  %center
+    %h1.w3-center Ride Me !!!
+    .w3-content.w3-section{:style => "max-width:80%;"}
+      .mySlides
+        %header.w3-container.w3-blue
+          %h1 Description :
+        %p
+          Ride Me is a MSU students project for Software ingeering. The main idea behind this is how to reduce the amount of cars that are going to the same event by using a common car.
+          This look like Uber but on a free way and should help people to meet new people and to get along with them on a road trip. What better than a road trip to make new friends?
+      .mySlides
+        %header.w3-container.w3-blue
+          %h1 How to use ?
+        %p
+          Ride Me is easy to use. First sign up by clicking
+          %b sign up
+          on the top. Provide the informations that have been asked and the sign up is free. You will be redirect to the coming
+          event as soon as you get signed in. By clicking on the specific event you can now join the event and get more info about it. Have fun :)
+      .mySlides
+        %header.w3-container.w3-blue
+          %h1 Contacts :
+        %p{:style => "text-align : left;"}
+          %img{:src =>  asset_path("Kokou.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          Kokou Kingbede : kokou.kingbede@mnsu.edu
+        %p{:style => "text-align : left;"}
+          %img{:src =>  asset_path("niraj.gupta.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          Niraj Gupta : gupta.niraz@gmail.com
+        %p{:style => "text-align : left;"}
+          %img{:src =>  asset_path("car2.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          Nafi Nafuil Karim : nafiul-karim.nafi@mnsu.edu
+        %p{:style => "text-align : left;"}
+          %img{:src =>  asset_path("car2.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          Barry : barryj217@yahoo.com
+      .mySlides
+        %header.w3-container.w3-blue
+          %h1 Snapshots :
+          %img{:src =>  asset_path("car3.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("car2.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("girl.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("thank.png"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("thankride.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("thank2.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("img1.JPG"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("img2.JPG"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("img3.JPG"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("img4.JPG"), :width => "15%",:height => "5%", :float => "right"}/
+      .mySlides
+        %header.w3-container.w3-blue
+          %h1 Contributors :
+        %p
+          %b{:style => "color: white; background-color: #4286f4;"} Kokou Kingbede (Software Engineer ,Master in Computer Science, Programming and Networking):
+        %p Project Manager; Enthousiastic he push everyone to work as their best. He come up with the output and views(Html, Javascript...)
+        %p
+          %b{:style => "color: white; background-color: #4286f4;"} Niraj Gupta (IT consultant , Master in Computer Science, Programing and Software testing):
+        %p Work on the ruby rails coding, Controller and models...
+        %p
+          %b{:style => "color: white; background-color: #4286f4;"} Nafi Nafuil Karim (IT consultant , Bachelor in Computer Science, Programing and Software testing):
+        %p Work on the ruby rails coding too, Controller and models...
+        %p
+          %b{:style => "color: white; background-color: #4286f4;"} Barry(Master in Computer Science, Programing and Software testing, Actual Engineer at GGG) :
+        %p Create the database model and the CSS...
+        %p
+          Special Thanks to
+          %b Dr. Jonathan C. Hardwick
+          for his special advices and lessons during the accomplishment of this.
+  %a.w3-btn-floating.w3-display-left{:onclick => "plusDivs(-1)"} ❮
+  %a.w3-btn-floating.w3-display-right{:onclick => "plusDivs(1)"} ❯
+  :javascript
+    var myIndex = 0;
+    carousel();
+    var myIndex = 0;
+      carousel();
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+          showDivs(slideIndex += n);
       }
-      
 
-      //function plusDivs(n) {
-      //    showDivs(slideIndex += n);
-      //}
-
-      //function showDivs(n) {
-      //    var i;
-      //    var x = document.getElementsByClassName("mySlides");
-      //    if (n > x.length) { slideIndex = 1 }
-      //    if (n < 1) { slideIndex = x.length }
-      //    for (i = 0; i < x.length; i++) {
-      //        x[i].style.display = "none";
-      //    }
-      //    x[slideIndex - 1].style.display = "block";
-      //}
-      function carOwner() {
-          if ($('#carOwnerSelect').val() == "Y") {
-              $('#not_A_car_owner').hide();
-              $('#Car_owner').show();
-          } else {
-              $('#not_A_car_owner').show();
-              $('#Car_owner').hide();
+      function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) { slideIndex = 1 }
+          if (n < 1) { slideIndex = x.length }
+          for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";
           }
+          x[slideIndex - 1].style.display = "block";
       }
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) { myIndex = 1 }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 9000); // Change image every 10 seconds
+    }
+    function carOwner() {
+        alert($('#carOwnerSelect').val());
+        if ($('#carOwnerSelect').val() == "Y") {
+            $('#not_A_car_owner').hide();
+            $('#Car_owner').show();
+        } else {
+            $('#not_A_car_owner').show();
+            $('#Car_owner').hide();
+        }
+    }
+
